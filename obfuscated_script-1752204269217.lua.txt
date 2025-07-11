@@ -107,10 +107,9 @@ local function tpAndFloatToEnemy(enemy)
 			end
 		end)
 
-		local timeout = 20
-		while isAlive(enemy) and timeout > 0 do
-			task.wait(0.5)
-			timeout -= 0.5
+		-- ❌ XOÁ GIỚI HẠN 20 GIÂY — Chờ đến khi quái thực sự chết
+		while isAlive(enemy) do
+			task.wait(0.2)
 		end
 
 		anchored = false
